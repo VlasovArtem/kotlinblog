@@ -1,11 +1,11 @@
 package org.avlasov.kotlinblog.entity
 
-import javax.persistence.Entity
+import org.springframework.data.mongodb.core.mapping.Document
 
 /**
  *   Created By artemvlasov on 2018-10-24
  **/
-@Entity
+@Document(collection = "entries")
 data class BlogEntry(val id: Long,
                      var title: String,
                      var description: String,
