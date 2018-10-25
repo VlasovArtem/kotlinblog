@@ -1,1 +1,1 @@
-# Blog example written on Kotlin and Angular 2  
+# Blog example written on Kotlin and Angular 2
