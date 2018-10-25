@@ -1,12 +1,13 @@
 package org.avlasov.kotlinblog.entity
 
+import org.bson.types.ObjectId
 import org.springframework.data.mongodb.core.mapping.Document
 
 /**
  *   Created By artemvlasov on 2018-10-24
  **/
 @Document(collection = "entries")
-data class BlogEntry(val id: Long,
+data class BlogEntry(val id: ObjectId,
                      var title: String,
                      var description: String,
                      var category: String,
