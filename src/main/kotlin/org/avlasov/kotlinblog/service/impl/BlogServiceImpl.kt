@@ -1,6 +1,6 @@
 package org.avlasov.kotlinblog.service.impl
 
-import org.avlasov.kotlinblog.entity.BlogControllerEntity
+import org.avlasov.kotlinblog.controller.BlogController
 import org.avlasov.kotlinblog.entity.BlogEntry
 import org.avlasov.kotlinblog.repository.BlogRepository
 import org.avlasov.kotlinblog.service.BlogService
@@ -16,7 +16,7 @@ class BlogServiceImpl(@Autowired private val blogRepository: BlogRepository) : B
 
     override fun getAll(): List<BlogEntry> = blogRepository.findAll()
 
-    override fun add(blogControllerEntity: BlogControllerEntity) {
+    override fun add(blogControllerEntity: BlogController.BlogControllerEntity) {
         blogRepository.insert(BlogEntry(ObjectId.get().toString(), blogControllerEntity.title, blogControllerEntity.description, blogControllerEntity.category, blogControllerEntity.image))
     }
 }
