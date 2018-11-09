@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository
 @Repository
 interface PostRepository : MongoRepository<Post, String> {
 
-    fun findPostsByUserId(id: String): List<Post>
+    fun findPostsByAuthorId(id: String): List<Post>
 
 }
