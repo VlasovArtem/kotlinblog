@@ -13,6 +13,6 @@ interface PostService {
     fun getAll(): List<Post>
     fun get(id: String): Optional<Post>
     fun add(blogEntry: Post): Post
-    fun getBlogEntriesByUserId(userId: String): List<Post>
+    fun getPostsByUserId(userId: String): List<Post>
 
 }

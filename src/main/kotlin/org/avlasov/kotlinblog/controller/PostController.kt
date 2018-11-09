@@ -30,6 +30,6 @@ class PostController(@Autowired private val postService: PostService) {
             .orElseGet { ResponseEntity.notFound().build() }
 
     @GetMapping(path = ["/get/user/"])
-    fun getUserPosts(@RequestParam userId: String) = postService.getBlogEntriesByUserId(userId)
+    fun getUserPosts(@RequestParam userId: String) = postService.getPostsByUserId(userId)
 
 }
