@@ -3,7 +3,6 @@ package org.avlasov.kotlinblog.controller
 import org.avlasov.kotlinblog.entity.BlogEntry
 import org.avlasov.kotlinblog.service.BlogService
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.context.annotation.Profile
 import org.springframework.http.MediaType.APPLICATION_JSON_VALUE
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -12,8 +11,7 @@ import org.springframework.web.bind.annotation.*
  *   Created By artemvlasov on 2018-10-25
  **/
 @RestController
-@RequestMapping(path = ["/api/blog"], produces = [APPLICATION_JSON_VALUE], consumes = [APPLICATION_JSON_VALUE])
-@Profile("rest")
+@RequestMapping(path = ["/rest/api/blog"], produces = [APPLICATION_JSON_VALUE], consumes = [APPLICATION_JSON_VALUE])
 class BlogController(@Autowired private val blogService: BlogService) {
 
     @PostMapping(path = ["/add"])

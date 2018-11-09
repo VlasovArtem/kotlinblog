@@ -11,5 +11,5 @@ import org.springframework.boot.builder.SpringApplicationBuilder
 class Application
 
 fun main(args: Array<String>) {
-    SpringApplicationBuilder(ApplicationConfig::class.java).profiles("development", "rest").run(*args)
+    SpringApplicationBuilder(ApplicationConfig::class.java).profiles("development").run(*args)
 }
