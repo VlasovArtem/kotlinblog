@@ -6,18 +6,18 @@ import org.springframework.data.mongodb.core.mapping.Document
 /**
  *   Created By artemvlasov on 2018-10-24
  **/
-@Document(collection = "entries")
-data class BlogEntry(@Id val id: String,
-                     val title: String,
-                     val description: String,
-                     val category: String,
-                     val user: User,
-                     val comments: List<Comment>,
-                     val image: ByteArray) {
+@Document(collection = "posts")
+data class Post(@Id val id: String,
+                val title: String,
+                val description: String,
+                val category: String,
+                val user: User,
+                val comments: List<Comment>,
+                val image: ByteArray) {
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
-        if (other !is BlogEntry) return false
+        if (other !is Post) return false
 
         if (id != other.id) return false
         if (title != other.title) return false

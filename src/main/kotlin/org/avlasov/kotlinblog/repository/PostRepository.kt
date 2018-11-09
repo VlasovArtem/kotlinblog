@@ -1,16 +1,15 @@
 package org.avlasov.kotlinblog.repository
 
-import org.avlasov.kotlinblog.entity.BlogEntry
+import org.avlasov.kotlinblog.entity.Post
 import org.springframework.data.mongodb.repository.MongoRepository
 import org.springframework.stereotype.Repository
-import java.util.*
 
 /**
  *   Created By artemvlasov on 2018-10-25
  **/
 @Repository
-interface BlogRepository : MongoRepository<BlogEntry, String> {
+interface PostRepository : MongoRepository<Post, String> {
 
-    fun findBlogEntriesByUserId(id: String): List<BlogEntry>
+    fun findBlogEntriesByUserId(id: String): List<Post>
 
 }
