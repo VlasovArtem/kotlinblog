@@ -11,6 +11,8 @@ data class BlogEntry(@Id val id: String,
                      val title: String,
                      val description: String,
                      val category: String,
+                     val user: User,
+                     val comments: List<Comment>,
                      val image: ByteArray) {
 
     override fun equals(other: Any?): Boolean {
@@ -21,6 +23,8 @@ data class BlogEntry(@Id val id: String,
         if (title != other.title) return false
         if (description != other.description) return false
         if (category != other.category) return false
+        if (user != other.user) return false
+        if (comments != other.comments) return false
         if (!image.contentEquals(other.image)) return false
 
         return true
@@ -31,6 +35,8 @@ data class BlogEntry(@Id val id: String,
         result = 31 * result + title.hashCode()
         result = 31 * result + description.hashCode()
         result = 31 * result + category.hashCode()
+        result = 31 * result + user.hashCode()
+        result = 31 * result + comments.hashCode()
         result = 31 * result + image.contentHashCode()
         return result
     }
