@@ -2,7 +2,6 @@ package org.avlasov.kotlinblog.controller
 
 import org.avlasov.kotlinblog.entity.Post
 import org.avlasov.kotlinblog.service.PostService
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType.APPLICATION_JSON_VALUE
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.*
  **/
 @RestController
 @RequestMapping(path = ["/rest/api/post"], produces = [APPLICATION_JSON_VALUE], consumes = [APPLICATION_JSON_VALUE])
-class PostController(@Autowired private val postService: PostService) {
+class PostController(private val postService: PostService) {
 
     @PostMapping(path = ["/add"])
     fun add(post: Post): ResponseEntity<String> {

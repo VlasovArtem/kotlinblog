@@ -2,7 +2,6 @@ package org.avlasov.kotlinblog.controller
 
 import org.avlasov.kotlinblog.entity.User
 import org.avlasov.kotlinblog.service.UserService
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
@@ -15,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController
  **/
 @RestController
 @RequestMapping(path = ["/rest/api/user"], consumes = [MediaType.APPLICATION_JSON_VALUE])
-class UserController(@Autowired private val userService: UserService) {
+class UserController(private val userService: UserService) {
 
 
     @GetMapping(path = ["/get"])
