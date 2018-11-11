@@ -6,7 +6,7 @@ import java.util.*
 /**
  *   Created By artemvlasov on 2018-11-09
  **/
-interface UserService {
+interface UserService : MainService<User> {
 
     fun get(id: String): Optional<User>
 
