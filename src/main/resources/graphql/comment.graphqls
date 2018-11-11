@@ -1,0 +1,24 @@
+type Comment {
+    id: String
+    comment: String!
+    post: Post!
+    author: User!
+}
+
+input CommentInput{
+    id: String
+    comment: String!
+    author: UserInput!
+    post: PostInput!
+}
+
+extend type Query {
+    findComments: [Comment]!
+    findComment(id: String): Comment
+    findUserComments(id: String): [Comment]!
+}
+
+extend type Mutation {
+    addComment(comment: String, author: UserInput, post: PostInput): Comment
+    addComment(commentInput: CommentInput): Comment
+}

@@ -1,0 +1,25 @@
+type User {
+    id: String
+    firstName: String!
+    lastName: String!
+    posts: [Post]!
+    comments: [Comment]!
+}
+
+input UserInput {
+    id: String
+    firstName: String!
+    lastName: String!
+}
+
+extend type Query {
+    # If return is Optional, then return only Type
+    findUser(id: String): User
+}
+
+extend type Mutation {
+    # GraphQL is not allow to input and output the same type
+#    addUser(author: User): User!
+    addUser(firstName: String, lastName: String): User
+    addUser(userInput: UserInput): User
+}

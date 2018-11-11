@@ -1,0 +1,27 @@
+type Post {
+    id: String
+    title: String!
+    description: String
+    category: String
+    author: User!
+    comments: [Comment]!
+}
+
+input PostInput {
+    id: String
+    title: String!
+    description: String!
+    category: String!
+    author: UserInput
+}
+
+extend type Query {
+    findPosts: [Post]!
+    findPost(id: String): Post
+    getUserPosts(userId: String): [Post]!
+}
+
+extend type Mutation {
+    addPost(title: String, description: String!, category: String!, author: UserInput): Post!
+    addPost(postInput: PostInput): Post!
+}
