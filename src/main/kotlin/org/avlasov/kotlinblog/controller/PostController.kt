@@ -16,7 +16,7 @@ class PostController(@Autowired private val postService: PostService) {
 
     @PostMapping(path = ["/add"])
     fun add(post: Post): ResponseEntity<String> {
-        postService.add(post)
+        postService.addEntity(post)
         return ResponseEntity.ok("Blog entry successfully added")
     }
 
