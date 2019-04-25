@@ -1,0 +1,8 @@
+<div>
+  <input [value]="testName"
+         (input)="testName=$event.target.value"> - Without ngModel<br>
+  <input [(ngModel)]="testName"> - [(ngModel)] <br>
+  <input bindon-ngModel="testName"> - bindon-ngModel <br>
+  <input [ngModel]="testName" (ngModelChange)="testName=$event"> - [ngModel] and (ngModelChange)="testName=$event" <br>
+  <input [ngModel]="testName" (ngModelChange)="setUppercaseName($event)"> - [ngModel] and (ngModelChange)="setUppercaseName($event)" <br>
+</div>

@@ -12,9 +12,9 @@ import org.avlasov.kotlinblog.graphql.input.UserInput
  **/
 class InputEntityMapping {
 
-    fun postInputToPost(postInput: PostInput): Post = Post(postInput.id, postInput.title, postInput.description, postInput.category, userInputToUser(postInput.author))
+    fun postInputToPost(postInput: PostInput): Post = Post(postId = postInput.id, title = postInput.title, description = postInput.description, category = postInput.category, author = userInputToUser(postInput.author))
     fun userInputToUser(userInput: UserInput): User = User(userInput.id, userInput.firstName, userInput.lastName)
-    fun commentInputToComment(commentInput: CommentInput): Comment = Comment(commentInput.id, commentInput.comment, userInputToUser(commentInput.author), postInputToPost(commentInput.post))
+    fun commentInputToComment(commentInput: CommentInput): Comment = Comment(commentId = commentInput.id, comment = commentInput.comment, author = userInputToUser(commentInput.author), post = postInputToPost(commentInput.post))
 
 
 

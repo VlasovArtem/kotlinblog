@@ -1,0 +1,30 @@
+<div>
+  <button (click)="setSpecial()">{{isSpecial ? 'Unset' : 'Set'}} special</button>
+  <p>
+    Is Special: <span [innerHtml]="isSpecial"></span>
+  </p>
+  <div>
+    Is Special: <span bind-innerHtml="isSpecial"></span> - bind-innerHtml
+    <p>
+      <span [ngClass]="classes">Text</span> - [ngClass]
+    </p>
+    <p>
+      <input type="text" [value]="isSpecial" disabled> - [value]
+    </p>
+    <p>
+      <input type="text" bind-value="isSpecial" disabled> - bind-value
+    </p>
+    <p>
+      <input [attr.type]="getType()" disabled> - [attr.type] {{getType()}}
+    </p>
+    <div>
+      <span class="lined" [class.lined]="!isSpecial">Test class</span> - [class.lined]
+    </div>
+    <div>
+      <span [style.color]="isSpecial ? 'black' : 'grey'">Test style</span> - [style.color]
+    </div>
+  </div>
+  <div>
+    <input type="text" [value]="bindingName" >
+  </div>
+</div>

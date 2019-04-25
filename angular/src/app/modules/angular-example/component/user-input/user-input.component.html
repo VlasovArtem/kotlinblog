@@ -1,0 +1,25 @@
+<h3>User Input</h3>
+<section>
+  Key Up event<br>
+  <input (keyup)="onKey($event)">
+  <p>{{values}}</p>
+  <input (keyup)="onKeyValue($event)">
+  <p>{{keyValues}}</p>
+  <div>
+    Reference<br>
+    <input #box (keyup)="0">
+    <p>{{box.value}}</p>
+  </div>
+  <div>
+    <div>Key Enter</div>
+    <input #keyEnterBox (keyup.enter)="onKeyEnter(keyEnterBox.value)">
+    <p>{{keyEnterBoxValue}}</p>
+  </div>
+  <div>
+    <div>On Blur and key enter</div>
+    <input #blurEnterBox
+           (keyup.enter)="onBlurKeyEnter(blurEnterBox.value)"
+           (blur)="onBlurEnter(blurEnterBox.value)">
+    <p>{{blurBoxValue}}</p>
+  </div>
+</section>

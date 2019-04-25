@@ -1,0 +1,34 @@
+<h3>Template Expression Operators</h3>
+<section>
+    <h4>Pipes</h4>
+    <div>
+        {{toLowerCase | lowercase}} - lowercase pipe
+    </div>
+    <div>
+        {{toUpperCase | uppercase}} - uppercase pipe
+    </div>
+    <div>
+        {{date | date:'longDate'}} - Long Date <br>
+        {{date | date:'shortDate'}} - Short Date
+    </div>
+    <div>
+        {{post | json}} - json
+    </div>
+</section>
+<section>
+    <h4>Safe navigation</h4>
+    <div *ngIf="nullObjectPost">
+        ngIf with null object {{nullObjectPost.title}}
+    </div>
+    <div>
+        Safe navigation {{nullObjectPost?.title}}
+    </div>
+    <div>
+        No-null assertion {{nullObjectPost!.title}}
+    </div>
+    <div>
+        With $any {{$any(nullObjectPost)?.marker}}
+    </div>
+    <button (click)="addPost()">Add Post</button>
+    <button (click)="removePost()">Remove Post</button>
+</section>

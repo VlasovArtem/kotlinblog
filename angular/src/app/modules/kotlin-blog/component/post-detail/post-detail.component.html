@@ -1,0 +1,16 @@
+<div *ngIf="post">
+  <button (click)="goBack()">Go Back</button>
+  <h2>Selected Post</h2>
+  <div>
+    <p>{{post.title | uppercase}}</p>
+    <p>{{post.description}} (Category: {{post.category}})</p>
+    <hr>
+    <div>
+      <label>Title
+        <input [(ngModel)]="post.title" placeholder="title">
+      </label>
+    </div>
+  </div>
+  <hr>
+  <app-comments></app-comments>
+</div>

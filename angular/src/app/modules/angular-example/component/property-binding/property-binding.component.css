@@ -1,0 +1,17 @@
+.isSpecial {
+    font-style: italic;
+    color: red;
+}
+.notSpecial {
+    color: black;
+    font-style: normal;
+}
+.special {
+    color: blue;
+    font-weight: bold;
+    font-style: oblique;
+}
+
+.lined {
+    text-decoration: line-through;
+}

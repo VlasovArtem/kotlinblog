@@ -14,7 +14,7 @@ class PostMutationImpl(@Autowired val postService: PostService) : PostMutation {
 
     private val inputEntityMapping = InputEntityMapping()
 
-    override fun addPost(title: String, description: String?, category: String?, author: UserInput) = postService.addEntity(Post(null, title, description, category, inputEntityMapping.userInputToUser(author)))
+    override fun addPost(title: String, description: String?, category: String?, author: UserInput) = postService.addEntity(Post(null, title, description, category, author = inputEntityMapping.userInputToUser(author)))
 
     override fun addPost(postInput: PostInput): Post = postService.addEntity(inputEntityMapping.postInputToPost(postInput))
 

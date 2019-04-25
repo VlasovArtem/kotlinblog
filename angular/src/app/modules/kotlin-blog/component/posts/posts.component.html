@@ -1,0 +1,19 @@
+<div>
+    <input type="button" value="Reset" (click)="selectedPosts = null">
+</div>
+<div>
+    <h2>Posts</h2>
+    <div *ngFor="let post of posts">
+        <p>
+            <span [class.selected]="post === selectedPosts">{{post.title | uppercase}}</span>
+            <a routerLink="/kotlinblog/posts/{{post.postId}}">Select</a>
+        </p>
+    </div>
+</div>
+<router-outlet></router-outlet>
+<button (click)="getUser()">Get User</button>
+<div *ngIf="user">
+    {{user.data.findUser.id}}
+</div>
+<!--<app-post-detail [post]="selectedPosts"></app-post-detail>-->
+

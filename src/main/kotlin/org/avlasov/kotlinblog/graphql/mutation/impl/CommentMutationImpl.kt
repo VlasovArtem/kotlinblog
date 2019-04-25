@@ -15,6 +15,6 @@ class CommentMutationImpl(@Autowired val commentService: CommentService) : Comme
 
     private val inputEntityMapping: InputEntityMapping = InputEntityMapping()
 
-    override fun addComment(comment: String, author: UserInput, post: PostInput): Comment = commentService.addEntity(Comment(null, comment, inputEntityMapping.userInputToUser(author), inputEntityMapping.postInputToPost(post)))
+    override fun addComment(comment: String, author: UserInput, post: PostInput): Comment = commentService.addEntity(Comment(null, comment, author = inputEntityMapping.userInputToUser(author), post = inputEntityMapping.postInputToPost(post)))
     override fun addComment(commentInput: CommentInput): Comment = commentService.addEntity(inputEntityMapping.commentInputToComment(commentInput))
 }

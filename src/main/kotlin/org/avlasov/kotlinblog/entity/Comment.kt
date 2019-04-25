@@ -9,5 +9,6 @@ import org.springframework.data.mongodb.core.mapping.Document
 @Document(collection = "comments")
 data class Comment(val commentId: String?,
                    val comment: String,
+                   val karma: Int = 0,
                    @DBRef val author: User,
                    @DBRef val post: Post) : Base(commentId)

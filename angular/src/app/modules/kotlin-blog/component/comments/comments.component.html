@@ -1,0 +1,10 @@
+<div *ngIf="commentsService.comments && commentsService.comments.length">
+    <button (click)="commentsService.clear()">Clear</button>
+    <h2>Comments</h2>
+    <p *ngFor="let comment of commentsService.comments">{{comment.comment}}</p>
+</div>
+<div>
+    <p>Add comment</p>
+    <input type="text" #comment>
+    <input type="button" value="Add Comment" (click)="commentsService.addComment(comment.value)">
+</div>

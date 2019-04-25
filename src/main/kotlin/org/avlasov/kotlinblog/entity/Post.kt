@@ -13,6 +13,7 @@ data class Post(val postId: String?,
                 val title: String,
                 val description: String?,
                 val category: String?,
+                val karma: Int = 0,
                 @DBRef val author: User) : Base(postId) {
 
     @DBRef var comments: List<Comment>
@@ -20,7 +21,7 @@ data class Post(val postId: String?,
     var modifiedDate: LocalDateTime
 
     constructor(id: String?, title: String, description: String?, category: String?, author: User, comments: List<Comment>, createdDate: LocalDateTime, modifiedDate: LocalDateTime)
-            : this(id, title, description, category, author) {
+            : this(id, title, description, category, 0, author) {
         this.createdDate = createdDate
         this.modifiedDate = modifiedDate
         this.comments = comments
